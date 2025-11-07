@@ -1,0 +1,24 @@
+Crear imagen en docker 1:
+1) Crear el archivo main.py para nuestro servidor flask
+2) Editar con:
+	from flask import Flask
+	app = Flask(__name__)
+	@app.route("/")
+	def root():
+	    return "pagina de prueba"
+	if __name__ == "__main__":
+	    app.run(host="0.0.0.0", port=5000, debug=True)
+3) Crear archivo Dockerfile con las siguientes instrucciones:
+	FROM python:3.10-slim
+	WORKDIR /app
+	COPY main.py .
+	RUN pip install Flask
+	EXPOSE 5000
+	CMD [ "python","main.py" ]
+4) compilar con: $ sudo docker image build -t wernerct/redes2:flask .
+5) verificar con: $ sudo docker image ls
+6) arrancar con: $ sudo docker container run --name pruebaflask -p 6001:5000 wernerct/redes2:flask
+7) para subirlo a docker hub (antes debera crear el manifest en su cuenta de docker hub):
+8) sudo docker login
+8) sudo docker pull wernerct/redes2:flask
+
