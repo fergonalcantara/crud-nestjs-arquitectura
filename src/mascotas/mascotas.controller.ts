@@ -94,6 +94,6 @@ export class MascotasController {
 
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number) {
-    return this.mascotasService.remove(id);
+    return this.mascotasService.remove(id).then(() => {mensaje: 'Eliminado'});
   }
 }

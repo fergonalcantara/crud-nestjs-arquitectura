@@ -17,6 +17,6 @@ async function bootstrap() {
   );
 
   await app.listen(3000);
-  console.log('Aplicación corriendo en http://localhost:3000');
+  console.log('Estamos bailando en http://localhost:3000');
 }
 bootstrap();

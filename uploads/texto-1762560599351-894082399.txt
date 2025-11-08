@@ -1,0 +1,29 @@
+Crear imagen en docker 2 (Horario de Comidas) en NODE-JS:
+1) Iniciar el proyecto con npm init y seguir con todos los pasos del archivo CrearAPI-Nodejs.docx, probar su aplicacion con el comando:
+	$ node geoapi.js
+probar en explorador web: http://localhost:5000/api/horario
+2) crear archivo .dockerignore el mismo concepto que gitignore, al realizar un COPY . . no se copien los archivos indicados:
+	node_modules
+	CrearAPI-Nodejs.pdf
+	Dockerfile
+3) Crear archivo Dockerfile con las siguientes instrucciones:
+	FROM node:current-alpine3.20 as inicial
+	ENV appDest /app
+	WORKDIR $appDest
+	COPY package.json .
+	RUN npm install -p
+
+	FROM node:current-alpine3.20 as final
+	ENV appDest2 /app
+	WORKDIR $appDest2
+	COPY --from=inicial /app/node_modules $appDest2/node_modules
+	COPY . .
+	CMD [ "node","geoapi.js" ]
+4) compilar con: $ sudo docker image build -t wernerct/redes2:nodejs .
+5) verificar con: $ sudo docker image ls
+6) arrancar con: $ sudo docker container run --name pruebanodejs -p 5005:5000 wernerct/redes2:nodejs
+7) para subirlo a docker hub (antes debera crear el manifest en su cuenta de docker hub):
+7) para subirlo a docker hub (antes debera crear el manifest en su cuenta de docker hub):
+8) sudo docker login
+8) sudo docker push wernerct/redes2:nodejs
+

@@ -15,10 +15,10 @@ import { CarrosModule } from './carros/carros.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'MySecretRootMySQL', // Cambia esto por tu contraseña de MySQL
+      password: 'MySecretRootMySQL',
       database: 'nest',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // Solo en desarrollo - crea tablas automáticamente
+      synchronize: true,
       logging: true,
     }),
     ServeStaticModule.forRoot({

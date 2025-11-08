@@ -94,6 +94,6 @@ export class UsuariosController {
 
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number) {
-    return this.usuariosService.remove(id);
+    return this.usuariosService.remove(id).then(() => {mensaje: 'Eliminado'});
   }
 }

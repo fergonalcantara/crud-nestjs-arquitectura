@@ -27,7 +27,7 @@ export class CarrosController {
         }
         callback(null, true);
       },
-      limits: { fileSize: 2 * 1024 * 1024 }, // 2MB
+      limits: { fileSize: 2 * 1024 * 1024 },
     }),
   )
   create(@Body() createCarroDto: CreateCarroDto, @UploadedFile() file?: Express.Multer.File) {
@@ -94,6 +94,6 @@ export class CarrosController {
 
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number) {
-    return this.carrosService.remove(id);
+    return this.carrosService.remove(id).then(() => {mensaje: 'Eliminado'});
   }
 }
