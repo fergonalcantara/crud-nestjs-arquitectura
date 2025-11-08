@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "5065daeb-c0f7-4d37-a8fe-7add458f7b60",
+		"name": "CRUD NestJS - Usuarios, Mascotas y Carros",
+		"description": "Colección completa para probar los 3 CRUDs con soporte de archivos (imágenes, PDF y TXT)\n\nAndres Fernando Gonzalez Alcantara\n\n202308061",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48828276",
+		"_collection_link": "https://fergonalcantara-6746886.postman.co/workspace/Andr%C3%A9s-Fernando-Gonz%C3%A1lez-Alc%C3%A1nt~e9f4ec99-85b1-4cec-8ee7-d51b67e3f5a8/collection/48828276-5065daeb-c0f7-4d37-a8fe-7add458f7b60?action=share&source=collection_link&creator=48828276"
+	},
+	"item": [
+		{
+			"name": "Usuarios (Imágenes)",
+			"item": [
+				{
+					"name": "Crear Usuario con Imagen",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Andres Gonzalez Alcantara",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "culaquiera@umes.com",
+									"type": "text"
+								},
+								{
+									"key": "telefono",
+									"value": "39935697",
+									"type": "text"
+								},
+								{
+									"key": "direccion",
+									"value": "24-48 z7, xela",
+									"type": "text"
+								},
+								{
+									"key": "edad",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/home/fergon/Pictures/Screenshots/PruebaMavenJava.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Todos los Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario Completo (PUT)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Juan Pérez Actualizado",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "juan.varios@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "telefono",
+									"value": "87654321",
+									"type": "text"
+								},
+								{
+									"key": "direccion",
+									"value": "Avenida Nueva 456",
+									"type": "text"
+								},
+								{
+									"key": "edad",
+									"value": "26",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario Parcial (PATCH)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "edad",
+									"value": "27",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/home/fergon/Pictures/Screenshots/8Units_202308061.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mascotas (PDF)",
+			"item": [
+				{
+					"name": "Crear Mascota con PDF",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "RAnchoViejo",
+									"type": "text"
+								},
+								{
+									"key": "especie",
+									"value": "Perro",
+									"type": "text"
+								},
+								{
+									"key": "raza",
+									"value": "Bulldog",
+									"type": "text"
+								},
+								{
+									"key": "edad",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "Gris",
+									"type": "text"
+								},
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "/home/fergon/Downloads/Autómatas_finitos.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/mascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"mascotas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Todas las Mascotas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/mascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"mascotas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Mascota por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/mascotas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"mascotas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Mascota Completa (PUT)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Firulais Jr",
+									"type": "text"
+								},
+								{
+									"key": "especie",
+									"value": "Perro",
+									"type": "text"
+								},
+								{
+									"key": "raza",
+									"value": "Golden Retriever",
+									"type": "text"
+								},
+								{
+									"key": "edad",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "Café claro",
+									"type": "text"
+								},
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/mascotas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"mascotas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Mascota Parcial (PATCH)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "edad",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/mascotas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"mascotas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Mascota",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/mascotas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"mascotas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carros (Archivos TXT)",
+			"item": [
+				{
+					"name": "Crear Carro con Archivo TXT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "marca",
+									"value": "Volvo",
+									"type": "text"
+								},
+								{
+									"key": "modelo",
+									"value": "S40",
+									"type": "text"
+								},
+								{
+									"key": "anio",
+									"value": "2007",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "Azul",
+									"type": "text"
+								},
+								{
+									"key": "placa",
+									"value": "DJH-123",
+									"type": "text"
+								},
+								{
+									"key": "archivo_texto",
+									"type": "file",
+									"src": "/home/fergon/Downloads/Crear imagen en docker2.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/carros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Todos los Carros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/carros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Carro por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/carros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carros",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Carro Completo (PUT)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "marca",
+									"value": "Honda",
+									"type": "text"
+								},
+								{
+									"key": "modelo",
+									"value": "Civic",
+									"type": "text"
+								},
+								{
+									"key": "anio",
+									"value": "2021",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "Negro",
+									"type": "text"
+								},
+								{
+									"key": "placa",
+									"value": "XYZ-789",
+									"type": "text"
+								},
+								{
+									"key": "archivo_texto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/carros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Carro Parcial (PATCH)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "color",
+									"value": "Azul",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/carros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Carro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/carros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

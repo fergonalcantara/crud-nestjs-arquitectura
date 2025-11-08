@@ -93,7 +93,8 @@ export class UsuariosController {
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.usuariosService.remove(id).then(() => {mensaje: 'Eliminado'});
+  async remove(@Param('id', ParseIntPipe) id: number) {
+    await this.usuariosService.remove(id);
+    return { mensaje: 'Usuario eliminado exitosamente' };
   }
 }

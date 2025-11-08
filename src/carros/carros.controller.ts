@@ -8,7 +8,7 @@ import { UpdateCarroDto } from './dto/update-carro.dto';
 
 @Controller('carros')
 export class CarrosController {
-  constructor(private readonly carrosService: CarrosService) {}
+  constructor(private readonly carrosService: CarrosService) { }
 
   @Post()
   @UseInterceptors(
@@ -93,7 +93,8 @@ export class CarrosController {
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.carrosService.remove(id).then(() => {mensaje: 'Eliminado'});
+  async remove(@Param('id', ParseIntPipe) id: number) {
+    await this.carrosService.remove(id);
+    return { mensaje: 'Carro eliminado exitosamente' };
   }
 }

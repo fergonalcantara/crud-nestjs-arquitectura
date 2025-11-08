@@ -8,7 +8,7 @@ import { UpdateMascotaDto } from './dto/update-mascota.dto';
 
 @Controller('mascotas')
 export class MascotasController {
-  constructor(private readonly mascotasService: MascotasService) {}
+  constructor(private readonly mascotasService: MascotasService) { }
 
   @Post()
   @UseInterceptors(
@@ -93,7 +93,8 @@ export class MascotasController {
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.mascotasService.remove(id).then(() => {mensaje: 'Eliminado'});
+  async remove(@Param('id', ParseIntPipe) id: number) {
+    await this.mascotasService.remove(id);
+    return { mensaje: 'Mascota eliminada exitosamente' };
   }
 }
